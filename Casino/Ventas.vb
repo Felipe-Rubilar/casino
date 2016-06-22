@@ -28,6 +28,8 @@ Public Class Ventas
         dt.Columns.Add("PRECIO")
 
 
+
+
     End Sub
 
     Private Sub cboproducto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboproducto.SelectedIndexChanged
@@ -147,9 +149,14 @@ Public Class Ventas
         Me.DataGridView1.DataSource = dt
 
 
+        Dim Col = Me.DataGridView1.CurrentCell.ColumnIndex
+        For Each row As DataGridViewRow In Me.DataGridView1.Rows
+            total += Val(row.Cells(Col).Value)
+        Next
+        Me.txttotal.Text = total.ToString
+
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
-    End Sub
+
 End Class
