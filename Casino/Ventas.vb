@@ -16,6 +16,7 @@ Public Class Ventas
         conexion.Open()
         da = New SqlDataAdapter("select * from PRODUCTO", conexion)
         dtb = New DataTable
+
         da.Fill(dtb)
         cboproducto.DataSource = dtb
         cboproducto.DisplayMember = "des_producto"
@@ -26,6 +27,7 @@ Public Class Ventas
         dt.Columns.Add("ID")
         dt.Columns.Add("PRODUCTO")
         dt.Columns.Add("PRECIO")
+        dt.Columns.Add("CANTIDAD")
 
 
 
@@ -132,32 +134,36 @@ Public Class Ventas
         Dim total As Integer = 0
 
 
+        If txtcantidad.Text < txtstock.Text Then
+
+            listadt.Rows.Clear()
+
+            conexion.Open()
+
+            Dim cmd As New SqlCommand("select * from PRODUCTO where id_producto= '" & txtIDventas.Text & "'", conexion)
+            leer = cmd.ExecuteReader
+            While leer.Read
+                dt.Rows.Add(leer.Item("id_producto"), leer.Item("des_producto"), txtsubtotal.Text, txtcantidad.Text)
+
+            End While
+            leer.Close()
+            conexion.Close()
+            Me.DataGridView1.DataSource = dt
 
 
-        listadt.Rows.Clear()
-
-        conexion.Open()
-
-        Dim cmd As New SqlCommand("select * from PRODUCTO where id_producto= '" & txtIDventas.Text & "'", conexion)
-        leer = cmd.ExecuteReader
-        While leer.Read
-            dt.Rows.Add(leer.Item("id_producto"), leer.Item("des_producto"), txtsubtotal.Text)
-
-        End While
-        leer.Close()
-        conexion.Close()
-        Me.DataGridView1.DataSource = dt
-
-
-        Dim Col = Me.DataGridView1.CurrentCell.ColumnIndex
-        For Each row As DataGridViewRow In Me.DataGridView1.Rows
-            total += Val(row.Cells(Col).Value)
-        Next
-        Me.txttotal.Text = total.ToString
+            Dim Col = Me.DataGridView1.CurrentCell.ColumnIndex
+            For Each row As DataGridViewRow In Me.DataGridView1.Rows
+                total += Val(row.Cells(Col).Value)
+            Next
+            Me.txttotal.Text = total.ToString
+        Else
+            MsgBox("el stock del producto es menor a la cantidad vendida, NO PUEDE REALIZAR ESTA OPERACION !!!" + vbCritical)
+        End If
 
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+    Private Sub btngenerar_Click(sender As Object, e As EventArgs) Handles btngenerar.Click
+
 
     End Sub
 End Class
