@@ -24,14 +24,19 @@ Partial Class Ventas
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventas))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtdescuento2 = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtstock = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnagregar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.txttotal = New System.Windows.Forms.TextBox()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.btngenerar = New System.Windows.Forms.Button()
         Me.btnmodificar = New System.Windows.Forms.Button()
-        Me.lstventa = New System.Windows.Forms.ListBox()
         Me.txtsubtotal = New System.Windows.Forms.TextBox()
         Me.lblsubtotal = New System.Windows.Forms.Label()
         Me.txtdescuento = New System.Windows.Forms.TextBox()
@@ -44,15 +49,20 @@ Partial Class Ventas
         Me.lblIDventas = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.txtdescuento2)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.txtstock)
+        Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.btnagregar)
         Me.Panel1.Controls.Add(Me.Panel2)
@@ -71,38 +81,92 @@ Partial Class Ventas
         Me.Panel1.Size = New System.Drawing.Size(908, 435)
         Me.Panel1.TabIndex = 0
         '
+        'txtdescuento2
+        '
+        Me.txtdescuento2.Location = New System.Drawing.Point(213, 244)
+        Me.txtdescuento2.Name = "txtdescuento2"
+        Me.txtdescuento2.Size = New System.Drawing.Size(55, 20)
+        Me.txtdescuento2.TabIndex = 17
+        Me.txtdescuento2.Text = "00"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(94, 241)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(95, 21)
+        Me.Label5.TabIndex = 16
+        Me.Label5.Text = "Descuento $"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(274, 206)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(23, 21)
+        Me.Label4.TabIndex = 15
+        Me.Label4.Text = "%"
+        '
+        'txtstock
+        '
+        Me.txtstock.Location = New System.Drawing.Point(490, 138)
+        Me.txtstock.Name = "txtstock"
+        Me.txtstock.ReadOnly = True
+        Me.txtstock.Size = New System.Drawing.Size(65, 20)
+        Me.txtstock.TabIndex = 14
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(437, 138)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(47, 21)
+        Me.Label3.TabIndex = 13
+        Me.Label3.Text = "Stock"
+        '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe Marker", 26.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(207, 27)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(171, 40)
+        Me.Label2.Size = New System.Drawing.Size(126, 30)
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "PRODUCTO"
         '
         'btnagregar
         '
         Me.btnagregar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnagregar.Location = New System.Drawing.Point(188, 320)
+        Me.btnagregar.Location = New System.Drawing.Point(212, 364)
         Me.btnagregar.Name = "btnagregar"
-        Me.btnagregar.Size = New System.Drawing.Size(157, 71)
+        Me.btnagregar.Size = New System.Drawing.Size(157, 42)
         Me.btnagregar.TabIndex = 11
-        Me.btnagregar.Text = "Agregar a la venta "
+        Me.btnagregar.Text = "Agregar a boleta"
         Me.btnagregar.UseVisualStyleBackColor = True
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.LightGray
+        Me.Panel2.BackColor = System.Drawing.Color.DarkGray
+        Me.Panel2.Controls.Add(Me.DataGridView1)
         Me.Panel2.Controls.Add(Me.txttotal)
         Me.Panel2.Controls.Add(Me.lbltotal)
         Me.Panel2.Controls.Add(Me.btngenerar)
         Me.Panel2.Controls.Add(Me.btnmodificar)
-        Me.Panel2.Controls.Add(Me.lstventa)
         Me.Panel2.Location = New System.Drawing.Point(594, 3)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(301, 421)
         Me.Panel2.TabIndex = 10
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(3, 6)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(295, 317)
+        Me.DataGridView1.TabIndex = 16
         '
         'txttotal
         '
@@ -123,35 +187,29 @@ Partial Class Ventas
         '
         'btngenerar
         '
-        Me.btngenerar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btngenerar.BackColor = System.Drawing.Color.DimGray
+        Me.btngenerar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btngenerar.Location = New System.Drawing.Point(173, 370)
         Me.btngenerar.Name = "btngenerar"
         Me.btngenerar.Size = New System.Drawing.Size(110, 42)
         Me.btngenerar.TabIndex = 13
-        Me.btngenerar.Text = "Generar  boleta"
-        Me.btngenerar.UseVisualStyleBackColor = True
+        Me.btngenerar.Text = "Generar "
+        Me.btngenerar.UseVisualStyleBackColor = False
         '
         'btnmodificar
         '
-        Me.btnmodificar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnmodificar.BackColor = System.Drawing.Color.DimGray
+        Me.btnmodificar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.Location = New System.Drawing.Point(13, 370)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(110, 42)
         Me.btnmodificar.TabIndex = 12
-        Me.btnmodificar.Text = "Modificar venta "
-        Me.btnmodificar.UseVisualStyleBackColor = True
-        '
-        'lstventa
-        '
-        Me.lstventa.FormattingEnabled = True
-        Me.lstventa.Location = New System.Drawing.Point(3, 7)
-        Me.lstventa.Name = "lstventa"
-        Me.lstventa.Size = New System.Drawing.Size(295, 316)
-        Me.lstventa.TabIndex = 0
+        Me.btnmodificar.Text = "Modificar"
+        Me.btnmodificar.UseVisualStyleBackColor = False
         '
         'txtsubtotal
         '
-        Me.txtsubtotal.Location = New System.Drawing.Point(188, 239)
+        Me.txtsubtotal.Location = New System.Drawing.Point(213, 306)
         Me.txtsubtotal.Name = "txtsubtotal"
         Me.txtsubtotal.Size = New System.Drawing.Size(64, 20)
         Me.txtsubtotal.TabIndex = 9
@@ -160,7 +218,7 @@ Partial Class Ventas
         '
         Me.lblsubtotal.AutoSize = True
         Me.lblsubtotal.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblsubtotal.Location = New System.Drawing.Point(94, 239)
+        Me.lblsubtotal.Location = New System.Drawing.Point(94, 305)
         Me.lblsubtotal.Name = "lblsubtotal"
         Me.lblsubtotal.Size = New System.Drawing.Size(75, 21)
         Me.lblsubtotal.TabIndex = 8
@@ -168,10 +226,11 @@ Partial Class Ventas
         '
         'txtdescuento
         '
-        Me.txtdescuento.Location = New System.Drawing.Point(188, 205)
+        Me.txtdescuento.Location = New System.Drawing.Point(213, 206)
         Me.txtdescuento.Name = "txtdescuento"
         Me.txtdescuento.Size = New System.Drawing.Size(55, 20)
         Me.txtdescuento.TabIndex = 7
+        Me.txtdescuento.Text = "00"
         '
         'lbldescuento
         '
@@ -179,13 +238,13 @@ Partial Class Ventas
         Me.lbldescuento.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbldescuento.Location = New System.Drawing.Point(94, 204)
         Me.lbldescuento.Name = "lbldescuento"
-        Me.lbldescuento.Size = New System.Drawing.Size(82, 21)
+        Me.lbldescuento.Size = New System.Drawing.Size(99, 21)
         Me.lbldescuento.TabIndex = 6
-        Me.lbldescuento.Text = "Descuento"
+        Me.lbldescuento.Text = "Descuento %"
         '
         'txtprecio
         '
-        Me.txtprecio.Location = New System.Drawing.Point(188, 172)
+        Me.txtprecio.Location = New System.Drawing.Point(213, 173)
         Me.txtprecio.Name = "txtprecio"
         Me.txtprecio.ReadOnly = True
         Me.txtprecio.Size = New System.Drawing.Size(100, 20)
@@ -204,10 +263,11 @@ Partial Class Ventas
         'cboproducto
         '
         Me.cboproducto.FormattingEnabled = True
-        Me.cboproducto.Location = New System.Drawing.Point(188, 137)
+        Me.cboproducto.Location = New System.Drawing.Point(213, 138)
         Me.cboproducto.Name = "cboproducto"
-        Me.cboproducto.Size = New System.Drawing.Size(257, 21)
+        Me.cboproducto.Size = New System.Drawing.Size(218, 21)
         Me.cboproducto.TabIndex = 3
+        Me.cboproducto.Text = "Seleccione producto......."
         '
         'lblproducto
         '
@@ -221,7 +281,7 @@ Partial Class Ventas
         '
         'txtIDventas
         '
-        Me.txtIDventas.Location = New System.Drawing.Point(187, 103)
+        Me.txtIDventas.Location = New System.Drawing.Point(212, 104)
         Me.txtIDventas.Name = "txtIDventas"
         Me.txtIDventas.ReadOnly = True
         Me.txtIDventas.Size = New System.Drawing.Size(65, 20)
@@ -233,19 +293,19 @@ Partial Class Ventas
         Me.lblIDventas.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIDventas.Location = New System.Drawing.Point(94, 103)
         Me.lblIDventas.Name = "lblIDventas"
-        Me.lblIDventas.Size = New System.Drawing.Size(76, 21)
+        Me.lblIDventas.Size = New System.Drawing.Size(92, 21)
         Me.lblIDventas.TabIndex = 0
-        Me.lblIDventas.Text = "ID Ventas"
+        Me.lblIDventas.Text = "ID Producto"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Black
-        Me.Label1.Font = New System.Drawing.Font("Segoe Marker", 26.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(37, 75)
+        Me.Label1.Location = New System.Drawing.Point(12, 90)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(418, 40)
+        Me.Label1.Size = New System.Drawing.Size(514, 37)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "SISTEMA DE VENTAS CASINO "
         '
@@ -259,23 +319,12 @@ Partial Class Ventas
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
         '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(746, 659)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(131, 37)
-        Me.Button1.TabIndex = 16
-        Me.Button1.Text = "Menu principal"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(914, 708)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(907, 670)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
@@ -285,6 +334,7 @@ Partial Class Ventas
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -308,9 +358,13 @@ Partial Class Ventas
     Friend WithEvents lbltotal As Label
     Friend WithEvents btngenerar As Button
     Friend WithEvents btnmodificar As Button
-    Friend WithEvents lstventa As ListBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents txtstock As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents txtdescuento2 As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents DataGridView1 As DataGridView
 End Class
