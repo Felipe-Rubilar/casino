@@ -134,7 +134,7 @@ Public Class Ventas
         Dim total As Integer = 0
 
 
-        If txtcantidad.Text < txtstock.Text Then
+        If Val(txtcantidad.Text) < Val(txtstock.Text) Then
 
             listadt.Rows.Clear()
 
@@ -157,7 +157,7 @@ Public Class Ventas
             Next
             Me.txttotal.Text = total.ToString
         Else
-            MsgBox("el stock del producto es menor a la cantidad vendida, NO PUEDE REALIZAR ESTA OPERACION !!!" + vbCritical)
+            MessageBox.Show("El stock del producto es menor a la cantidad vendida, No puede realizar la venta", "error de stock", MessageBoxButtons.OK, MessageBoxIcon.Stop)
         End If
 
     End Sub
