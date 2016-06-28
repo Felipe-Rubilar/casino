@@ -206,7 +206,7 @@ Partial Class Ventas
         Me.cboproducto.FormattingEnabled = True
         Me.cboproducto.Location = New System.Drawing.Point(188, 137)
         Me.cboproducto.Name = "cboproducto"
-        Me.cboproducto.Size = New System.Drawing.Size(355, 21)
+        Me.cboproducto.Size = New System.Drawing.Size(257, 21)
         Me.cboproducto.TabIndex = 3
         '
         'lblproducto
