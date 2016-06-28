@@ -24,6 +24,7 @@ Partial Class Ventas
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventas))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnagregar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.txttotal = New System.Windows.Forms.TextBox()
@@ -43,7 +44,7 @@ Partial Class Ventas
         Me.lblIDventas = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,14 +71,24 @@ Partial Class Ventas
         Me.Panel1.Size = New System.Drawing.Size(908, 435)
         Me.Panel1.TabIndex = 0
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe Marker", 26.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(207, 27)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(171, 40)
+        Me.Label2.TabIndex = 12
+        Me.Label2.Text = "PRODUCTO"
+        '
         'btnagregar
         '
         Me.btnagregar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnagregar.Location = New System.Drawing.Point(98, 281)
+        Me.btnagregar.Location = New System.Drawing.Point(188, 320)
         Me.btnagregar.Name = "btnagregar"
-        Me.btnagregar.Size = New System.Drawing.Size(110, 42)
+        Me.btnagregar.Size = New System.Drawing.Size(157, 71)
         Me.btnagregar.TabIndex = 11
-        Me.btnagregar.Text = "Agregar"
+        Me.btnagregar.Text = "Agregar a la venta "
         Me.btnagregar.UseVisualStyleBackColor = True
         '
         'Panel2
@@ -112,22 +123,22 @@ Partial Class Ventas
         '
         'btngenerar
         '
-        Me.btngenerar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btngenerar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btngenerar.Location = New System.Drawing.Point(173, 370)
         Me.btngenerar.Name = "btngenerar"
         Me.btngenerar.Size = New System.Drawing.Size(110, 42)
         Me.btngenerar.TabIndex = 13
-        Me.btngenerar.Text = "Generar "
+        Me.btngenerar.Text = "Generar  boleta"
         Me.btngenerar.UseVisualStyleBackColor = True
         '
         'btnmodificar
         '
-        Me.btnmodificar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnmodificar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.Location = New System.Drawing.Point(13, 370)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(110, 42)
         Me.btnmodificar.TabIndex = 12
-        Me.btnmodificar.Text = "Modificar"
+        Me.btnmodificar.Text = "Modificar venta "
         Me.btnmodificar.UseVisualStyleBackColor = True
         '
         'lstventa
@@ -230,11 +241,11 @@ Partial Class Ventas
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Black
-        Me.Label1.Font = New System.Drawing.Font("Monospac821 BT", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe Marker", 26.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(12, 90)
+        Me.Label1.Location = New System.Drawing.Point(37, 75)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(492, 39)
+        Me.Label1.Size = New System.Drawing.Size(418, 40)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "SISTEMA DE VENTAS CASINO "
         '
@@ -248,22 +259,23 @@ Partial Class Ventas
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
         '
-        'Label2
+        'Button1
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(207, 27)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(125, 30)
-        Me.Label2.TabIndex = 12
-        Me.Label2.Text = "PRODUCTO"
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(746, 659)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(131, 37)
+        Me.Button1.TabIndex = 16
+        Me.Button1.Text = "Menu principal"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(907, 670)
+        Me.ClientSize = New System.Drawing.Size(914, 708)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
@@ -300,4 +312,5 @@ Partial Class Ventas
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Button1 As Button
 End Class

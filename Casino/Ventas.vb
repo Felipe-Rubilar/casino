@@ -13,6 +13,7 @@ Public Class Ventas
 
         da = New SqlDataAdapter("select * from PRODUCTO", conexion)
         dtb = New DataTable
+
         da.Fill(dtb)
         cboproducto.DataSource = dtb
         cboproducto.DisplayMember = "des_producto"
