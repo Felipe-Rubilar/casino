@@ -24,14 +24,18 @@ Public Class Ventas
         cboproducto.SelectedIndex = -1
         conexion.Close()
 
-        dt.Columns.Add("ID")
+        dt.Columns.Add("TOTAL")
         dt.Columns.Add("PRODUCTO")
-        dt.Columns.Add("PRECIO")
         dt.Columns.Add("CANTIDAD")
+        dt.Columns.Add("ID")
+        dt.Columns.Add("PRECIO UNITARIO")
 
-
-
-
+        txtdescuento.Enabled = False
+        txtdescuento2.Enabled = False
+        txtpunitario.Enabled = False
+        txtsubtotal.Enabled = False
+        btnagregar.Enabled = False
+        txtcantidad.Enabled = False
     End Sub
 
     Private Sub cboproducto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboproducto.SelectedIndexChanged
@@ -52,15 +56,14 @@ Public Class Ventas
                 txtstock.Text = dt.Rows(0).Item("stock").ToString
             End If
             conexion.Close()
-            txtdescuento.Focus()
+            txtcantidad.Enabled = True
+            txtcantidad.Focus()
 
         Catch ex As Exception
         End Try
     End Sub
 
-    Private Sub txtdescuento_TextChanged(sender As Object, e As EventArgs) Handles txtdescuento.TextChanged
 
-    End Sub
 
     Private Sub txtdescuento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtdescuento.KeyPress
         If Char.IsDigit(e.KeyChar) Then
@@ -85,16 +88,23 @@ Public Class Ventas
 
         Dim val1 As Integer = 0
         Dim val2 As Integer = 0
+        Dim total As Integer = 0
+        Dim val11 As Integer = 0
+        Dim val22 As Integer = 0
         Int32.TryParse(txtprecio.Text, val1)
         Int32.TryParse(txtdescuento.Text, val2)
+        Int32.TryParse(txtpunitario.Text, val11)
+        Int32.TryParse(txtcantidad.Text, val22)
 
         If Asc(e.KeyChar) = 13 Then
             txtdescuento2.Text = CStr(val1 * val2) / 100
-            txtsubtotal.Text = CStr(Val(txtprecio.Text)) - CStr(Val(txtdescuento2.Text))
-            btnagregar.Focus()
+            txtpunitario.Text = CStr(Val(txtprecio.Text)) - CStr(Val(txtdescuento2.Text))
+            txtsubtotal.Text = CStr(Val(txtpunitario.Text)) * CStr(Val(txtcantidad.Text))
             txtdescuento2.Enabled = False
-
+            btnagregar.Enabled = True
+            btnagregar.Focus()
         End If
+
     End Sub
 
 
@@ -116,15 +126,18 @@ Public Class Ventas
         Else
             e.Handled = True
         End If
+        Dim val11 As Integer = 0
+        Dim val22 As Integer = 0
         Dim val1 As Integer = 0
         Dim val2 As Integer = 0
         Int32.TryParse(txtprecio.Text, val1)
         Int32.TryParse(txtdescuento.Text, val2)
-
+        Int32.TryParse(txtpunitario.Text, val11)
+        Int32.TryParse(txtcantidad.Text, val22)
         If Asc(e.KeyChar) = 13 Then
 
-            txtsubtotal.Text = CStr(Val(txtprecio.Text)) - CStr(Val(txtdescuento2.Text))
-            btnagregar.Focus()
+            txtpunitario.Text = CStr(Val(txtprecio.Text)) - CStr(Val(txtdescuento2.Text))
+            txtsubtotal.Text = CStr(Val(txtpunitario.Text)) * CStr(Val(txtcantidad.Text))
             txtdescuento.Enabled = False
         End If
     End Sub
@@ -143,7 +156,7 @@ Public Class Ventas
             Dim cmd As New SqlCommand("select * from PRODUCTO where id_producto= '" & txtIDventas.Text & "'", conexion)
             leer = cmd.ExecuteReader
             While leer.Read
-                dt.Rows.Add(leer.Item("id_producto"), leer.Item("des_producto"), txtsubtotal.Text, txtcantidad.Text)
+                dt.Rows.Add(txtsubtotal.Text, leer.Item("des_producto"), txtcantidad.Text, leer.Item("id_producto"), txtprecio.Text)
 
             End While
             leer.Close()
@@ -156,13 +169,29 @@ Public Class Ventas
                 total += Val(row.Cells(Col).Value)
             Next
             Me.txttotal.Text = total.ToString
+            txtcantidad.Text = ""
+            txtdescuento.Text = ""
+            txtdescuento2.Text = ""
+
+            txtIDventas.Text = ""
+            txtprecio.Text = ""
+            txtstock.Text = ""
+            txtpunitario.Text = ""
+            txtsubtotal.Text = ""
         Else
-            MessageBox.Show("El stock del producto es menor a la cantidad vendida, No puede realizar la venta", "error de stock", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+            MessageBox.Show("El stock del producto es menor a la cantidad solicitada, No puede realizar la venta", "Stock insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Stop)
         End If
 
     End Sub
 
     Private Sub btngenerar_Click(sender As Object, e As EventArgs) Handles btngenerar.Click
         visualisaciondeboleta.ShowDialog()
+    End Sub
+
+    Private Sub txtcantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcantidad.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            txtdescuento.Enabled = True
+            txtdescuento.Focus()
+        End If
     End Sub
 End Class

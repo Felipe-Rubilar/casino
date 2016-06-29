@@ -7,4 +7,8 @@ Public Class LogindePrueba
             MsgBox(" El Usuario y/o la Clave son Incorrect@s ")
         End If
     End Sub
+
+    Private Sub pnl1login_Paint(sender As Object, e As PaintEventArgs) Handles pnl1login.Paint
+
+    End Sub
 End Class
