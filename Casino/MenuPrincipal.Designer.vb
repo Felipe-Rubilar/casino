@@ -24,10 +24,10 @@ Partial Class MenuPrincipal
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.InicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GaleriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NosotrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ContactoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoginCasinoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NosotrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GaleriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContactoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -47,11 +47,11 @@ Partial Class MenuPrincipal
         Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
         Me.InicioToolStripMenuItem.Text = "Inicio"
         '
-        'GaleriaToolStripMenuItem
+        'LoginCasinoToolStripMenuItem
         '
-        Me.GaleriaToolStripMenuItem.Name = "GaleriaToolStripMenuItem"
-        Me.GaleriaToolStripMenuItem.Size = New System.Drawing.Size(55, 20)
-        Me.GaleriaToolStripMenuItem.Text = "Galeria"
+        Me.LoginCasinoToolStripMenuItem.Name = "LoginCasinoToolStripMenuItem"
+        Me.LoginCasinoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LoginCasinoToolStripMenuItem.Text = "Ventas"
         '
         'NosotrosToolStripMenuItem
         '
@@ -59,17 +59,17 @@ Partial Class MenuPrincipal
         Me.NosotrosToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
         Me.NosotrosToolStripMenuItem.Text = "Nosotros"
         '
+        'GaleriaToolStripMenuItem
+        '
+        Me.GaleriaToolStripMenuItem.Name = "GaleriaToolStripMenuItem"
+        Me.GaleriaToolStripMenuItem.Size = New System.Drawing.Size(55, 20)
+        Me.GaleriaToolStripMenuItem.Text = "Galeria"
+        '
         'ContactoToolStripMenuItem
         '
         Me.ContactoToolStripMenuItem.Name = "ContactoToolStripMenuItem"
         Me.ContactoToolStripMenuItem.Size = New System.Drawing.Size(68, 20)
         Me.ContactoToolStripMenuItem.Text = "Contacto"
-        '
-        'LoginCasinoToolStripMenuItem
-        '
-        Me.LoginCasinoToolStripMenuItem.Name = "LoginCasinoToolStripMenuItem"
-        Me.LoginCasinoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.LoginCasinoToolStripMenuItem.Text = "Login Casino"
         '
         'MenuPrincipal
         '

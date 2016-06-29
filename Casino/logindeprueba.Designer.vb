@@ -155,7 +155,8 @@ Partial Class LogindePrueba
         Me.Controls.Add(Me.pnl1login)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "LogindePrueba"
-        Me.Text = "login"
+        Me.Text = "Login"
+        Me.TopMost = True
         Me.pnl2login.ResumeLayout(False)
         Me.pnl2login.PerformLayout()
         Me.pnl3login.ResumeLayout(False)
