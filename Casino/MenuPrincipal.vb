@@ -4,6 +4,6 @@
     End Sub
 
     Private Sub LoginCasinoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoginCasinoToolStripMenuItem.Click
-        LogindePrueba.ShowDialog()
+        Ventas.ShowDialog()
     End Sub
 End Class
