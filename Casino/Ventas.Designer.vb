@@ -24,6 +24,8 @@ Partial Class Ventas
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventas))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtsubtotal = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtcantidad = New System.Windows.Forms.TextBox()
         Me.txtdescuento2 = New System.Windows.Forms.TextBox()
@@ -51,8 +53,6 @@ Partial Class Ventas
         Me.lblIDventas = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.txtsubtotal = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,6 +88,23 @@ Partial Class Ventas
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(908, 435)
         Me.Panel1.TabIndex = 0
+        '
+        'txtsubtotal
+        '
+        Me.txtsubtotal.Location = New System.Drawing.Point(435, 311)
+        Me.txtsubtotal.Name = "txtsubtotal"
+        Me.txtsubtotal.Size = New System.Drawing.Size(64, 20)
+        Me.txtsubtotal.TabIndex = 21
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(361, 310)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(68, 21)
+        Me.Label7.TabIndex = 20
+        Me.Label7.Text = "Subtotal"
         '
         'Label6
         '
@@ -342,23 +359,6 @@ Partial Class Ventas
         Me.PictureBox1.Size = New System.Drawing.Size(343, 207)
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
-        '
-        'txtsubtotal
-        '
-        Me.txtsubtotal.Location = New System.Drawing.Point(435, 311)
-        Me.txtsubtotal.Name = "txtsubtotal"
-        Me.txtsubtotal.Size = New System.Drawing.Size(64, 20)
-        Me.txtsubtotal.TabIndex = 21
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(361, 310)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(68, 21)
-        Me.Label7.TabIndex = 20
-        Me.Label7.Text = "Subtotal"
         '
         'Ventas
         '
