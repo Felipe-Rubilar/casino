@@ -22,38 +22,140 @@ Partial Class login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(login))
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btniniciarsesion = New System.Windows.Forms.Button()
+        Me.txtingresesupassword = New System.Windows.Forms.TextBox()
+        Me.txtingresesuusuario = New System.Windows.Forms.TextBox()
+        Me.lbliniciarsesion = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TextBox1
+        'Panel1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(92, 68)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 0
+        Me.Panel1.BackColor = System.Drawing.Color.LightGray
+        Me.Panel1.Controls.Add(Me.PictureBox2)
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.btniniciarsesion)
+        Me.Panel1.Controls.Add(Me.txtingresesupassword)
+        Me.Panel1.Controls.Add(Me.txtingresesuusuario)
+        Me.Panel1.Location = New System.Drawing.Point(12, 109)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(356, 217)
+        Me.Panel1.TabIndex = 0
+        Me.Panel1.Visible = False
         '
-        'TextBox2
+        'PictureBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(92, 136)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 1
+        Me.PictureBox2.BackColor = System.Drawing.Color.White
+        Me.PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.Location = New System.Drawing.Point(316, 83)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(27, 26)
+        Me.PictureBox2.TabIndex = 9
+        Me.PictureBox2.TabStop = False
+        Me.PictureBox2.Visible = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.White
+        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Location = New System.Drawing.Point(316, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(27, 26)
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
+        Me.PictureBox1.Visible = False
+        '
+        'btniniciarsesion
+        '
+        Me.btniniciarsesion.BackColor = System.Drawing.Color.Black
+        Me.btniniciarsesion.Cursor = System.Windows.Forms.Cursors.AppStarting
+        Me.btniniciarsesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btniniciarsesion.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btniniciarsesion.Location = New System.Drawing.Point(16, 149)
+        Me.btniniciarsesion.Name = "btniniciarsesion"
+        Me.btniniciarsesion.Size = New System.Drawing.Size(327, 37)
+        Me.btniniciarsesion.TabIndex = 7
+        Me.btniniciarsesion.Text = "Iniciar sesion"
+        Me.btniniciarsesion.UseVisualStyleBackColor = False
+        '
+        'txtingresesupassword
+        '
+        Me.txtingresesupassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtingresesupassword.Location = New System.Drawing.Point(16, 83)
+        Me.txtingresesupassword.Name = "txtingresesupassword"
+        Me.txtingresesupassword.Size = New System.Drawing.Size(327, 26)
+        Me.txtingresesupassword.TabIndex = 6
+        Me.txtingresesupassword.Text = "Ingrese Su Password"
+        '
+        'txtingresesuusuario
+        '
+        Me.txtingresesuusuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtingresesuusuario.Location = New System.Drawing.Point(16, 12)
+        Me.txtingresesuusuario.Name = "txtingresesuusuario"
+        Me.txtingresesuusuario.Size = New System.Drawing.Size(327, 26)
+        Me.txtingresesuusuario.TabIndex = 5
+        Me.txtingresesuusuario.Text = "Ingrese  Su Usuario"
+        '
+        'lbliniciarsesion
+        '
+        Me.lbliniciarsesion.AutoSize = True
+        Me.lbliniciarsesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbliniciarsesion.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lbliniciarsesion.Location = New System.Drawing.Point(164, 41)
+        Me.lbliniciarsesion.Name = "lbliniciarsesion"
+        Me.lbliniciarsesion.Size = New System.Drawing.Size(191, 33)
+        Me.lbliniciarsesion.TabIndex = 1
+        Me.lbliniciarsesion.Text = "Iniciar Sesion"
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.Color.White
+        Me.PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox3.Location = New System.Drawing.Point(75, 28)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(72, 62)
+        Me.PictureBox3.TabIndex = 9
+        Me.PictureBox3.TabStop = False
+        Me.PictureBox3.Visible = False
         '
         'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 261)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.ClientSize = New System.Drawing.Size(385, 350)
+        Me.Controls.Add(Me.PictureBox3)
+        Me.Controls.Add(Me.lbliniciarsesion)
+        Me.Controls.Add(Me.Panel1)
         Me.Name = "login"
         Me.Text = "login"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents btniniciarsesion As Button
+    Friend WithEvents txtingresesupassword As TextBox
+    Friend WithEvents txtingresesuusuario As TextBox
+    Friend WithEvents lbliniciarsesion As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
 End Class
