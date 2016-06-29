@@ -55,8 +55,10 @@ Partial Class LogindePrueba
         '
         Me.txtclavecasino.BackColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtclavecasino.Font = New System.Drawing.Font("Papyrus", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtclavecasino.ForeColor = System.Drawing.Color.White
         Me.txtclavecasino.Location = New System.Drawing.Point(243, 112)
         Me.txtclavecasino.Name = "txtclavecasino"
+        Me.txtclavecasino.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtclavecasino.Size = New System.Drawing.Size(300, 37)
         Me.txtclavecasino.TabIndex = 3
         '
@@ -64,6 +66,7 @@ Partial Class LogindePrueba
         '
         Me.txtusuariocasino.BackColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtusuariocasino.Font = New System.Drawing.Font("Papyrus", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtusuariocasino.ForeColor = System.Drawing.Color.White
         Me.txtusuariocasino.Location = New System.Drawing.Point(243, 44)
         Me.txtusuariocasino.Name = "txtusuariocasino"
         Me.txtusuariocasino.Size = New System.Drawing.Size(300, 37)
@@ -119,6 +122,7 @@ Partial Class LogindePrueba
         Me.pnl1login.BackgroundImage = Global.Casino.My.Resources.Resources.black_pattern_squares_wallpaper_12
         Me.pnl1login.Controls.Add(Me.PictureBox1)
         Me.pnl1login.Controls.Add(Me.lbltitulocasino)
+        Me.pnl1login.ForeColor = System.Drawing.Color.White
         Me.pnl1login.Location = New System.Drawing.Point(0, 0)
         Me.pnl1login.Name = "pnl1login"
         Me.pnl1login.Size = New System.Drawing.Size(684, 109)
