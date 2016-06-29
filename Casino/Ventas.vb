@@ -4,7 +4,7 @@ Imports System.Data.SqlClient
 Public Class Ventas
 
 
-    Dim conexion As New SqlConnection("Data Source=.\SQLEXPRESS;Initial Catalog=BD_CASINO2;Integrated Security=True")
+    Dim conexion As New SqlConnection("Data Source=.;Initial Catalog=BD_CASINO2;Integrated Security=True")
     Dim cmd As SqlCommand
     Dim da As New SqlDataAdapter
     Dim dtb As New DataTable
@@ -197,5 +197,10 @@ Public Class Ventas
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+        MenuPrincipal.Show()
     End Sub
 End Class

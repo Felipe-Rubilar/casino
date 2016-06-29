@@ -46,6 +46,10 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -77,16 +81,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BD_CASINO2DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Login1.Designer.vb">
+      <DependentUpon>Login1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MenuPrincipal.Designer.vb">
       <DependentUpon>MenuPrincipal.vb</DependentUpon>
     </Compile>
     <Compile Include="MenuPrincipal.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LogindePrueba.Designer.vb">
-      <DependentUpon>LogindePrueba.vb</DependentUpon>
-    </Compile>
-    <Compile Include="LogindePrueba.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ventas.vb">
@@ -119,11 +123,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Login1.resx">
+      <DependentUpon>Login1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LogindePrueba.resx">
-      <DependentUpon>LogindePrueba.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.vb</DependentUpon>
