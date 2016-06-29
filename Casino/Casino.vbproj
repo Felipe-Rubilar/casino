@@ -82,10 +82,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BD_CASINO2DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="logindeprueba.Designer.vb">
-      <DependentUpon>logindeprueba.vb</DependentUpon>
+    <Compile Include="MenuPrincipal.Designer.vb">
+      <DependentUpon>MenuPrincipal.vb</DependentUpon>
     </Compile>
-    <Compile Include="logindeprueba.vb">
+    <Compile Include="MenuPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogindePrueba.Designer.vb">
+      <DependentUpon>LogindePrueba.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LogindePrueba.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ventas.vb">
@@ -118,8 +124,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="logindeprueba.resx">
-      <DependentUpon>logindeprueba.vb</DependentUpon>
+    <EmbeddedResource Include="MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogindePrueba.resx">
+      <DependentUpon>LogindePrueba.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.vb</DependentUpon>

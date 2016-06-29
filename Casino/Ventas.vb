@@ -163,7 +163,6 @@ Public Class Ventas
     End Sub
 
     Private Sub btngenerar_Click(sender As Object, e As EventArgs) Handles btngenerar.Click
-
-
+        visualisaciondeboleta.ShowDialog()
     End Sub
 End Class
