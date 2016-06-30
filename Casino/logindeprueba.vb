@@ -13,6 +13,8 @@ Public Class LogindePrueba
         End If
     End Sub
 
+    Private Sub LogindePrueba_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class
 
