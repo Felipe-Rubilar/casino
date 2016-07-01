@@ -84,7 +84,11 @@
     <Compile Include="Login1.Designer.vb">
       <DependentUpon>Login1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Login1.vb">
+    <Compile Include="Login1.vb" />
+    <Compile Include="MantenedorStock.Designer.vb">
+      <DependentUpon>MantenedorStock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MantenedorStock.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MenuPrincipal.Designer.vb">
@@ -125,6 +129,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Login1.resx">
       <DependentUpon>Login1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantenedorStock.resx">
+      <DependentUpon>MantenedorStock.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.vb</DependentUpon>
@@ -179,6 +186,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Coffeshop-Hipster-80x80.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apmqsibsbhjtydtjutcz.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
