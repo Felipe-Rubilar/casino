@@ -11,8 +11,15 @@ Public Class Ventas
     Dim leer As SqlDataReader
     Dim listadt As New DataTable
     Dim dt As New DataTable
+    Dim dt2 As New DataTable
 
     Private Sub Ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+
+        TextBox2.Text = Date.Today
+
+
         conexion.Open()
         da = New SqlDataAdapter("select * from PRODUCTO", conexion)
         dtb = New DataTable
@@ -24,11 +31,17 @@ Public Class Ventas
         cboproducto.SelectedIndex = -1
         conexion.Close()
 
-        dt.Columns.Add("TOTAL")
-        dt.Columns.Add("PRODUCTO")
-        dt.Columns.Add("CANTIDAD")
+
+
         dt.Columns.Add("ID")
+        dt.Columns.Add("PRODUCTO")
         dt.Columns.Add("PRECIO UNITARIO")
+        dt.Columns.Add("CANTIDAD")
+        dt.Columns.Add("TOTAL")
+
+
+
+
 
         txtdescuento.Enabled = False
         txtdescuento2.Enabled = False
@@ -156,7 +169,7 @@ Public Class Ventas
             Dim cmd As New SqlCommand("select * from PRODUCTO where id_producto= '" & txtIDventas.Text & "'", conexion)
             leer = cmd.ExecuteReader
             While leer.Read
-                dt.Rows.Add(txtsubtotal.Text, leer.Item("des_producto"), txtcantidad.Text, leer.Item("id_producto"), txtprecio.Text)
+                dt.Rows.Add(leer.Item("id_producto"), leer.Item("des_producto"), txtprecio.Text, txtcantidad.Text, txtsubtotal.Text)
 
             End While
             leer.Close()
@@ -166,7 +179,7 @@ Public Class Ventas
 
             Dim Col = Me.DataGridView1.CurrentCell.ColumnIndex
             For Each row As DataGridViewRow In Me.DataGridView1.Rows
-                total += Val(row.Cells(Col).Value)
+                total += Val(row.Cells(4).Value)
             Next
             Me.txttotal.Text = total.ToString
             txtcantidad.Text = ""
@@ -185,7 +198,53 @@ Public Class Ventas
     End Sub
 
     Private Sub btngenerar_Click(sender As Object, e As EventArgs) Handles btngenerar.Click
-        visualisaciondeboleta.ShowDialog()
+
+
+        conexion.Open()
+        Dim comm As New SqlCommand("Select count(num_factura) from FACTURA", conexion)
+        Dim nFact As Integer
+        nFact = comm.ExecuteScalar
+        nFact = nFact + 1
+        TextBox1.Text = (nFact)
+
+        conexion.Close()
+
+        If DataGridView1.Rows.Count = 0 Then
+            Return
+        End If
+        conexion.Open()
+
+        Dim query2 As String = "INSERT INTO FACTURA (fecha, total, id_usuario) VALUES (@item, @id_producto, @cantidad, @subtotal)"
+        Dim cmd2 As New SqlCommand(query2, conexion)
+
+        For Each row As DataGridViewRow In DataGridView1.Rows
+
+            cmd2.Parameters.Clear()
+
+            cmd2.Parameters.AddWithValue("@item", Convert.ToString(row.Cells("PRODUCTO").Value))
+            cmd2.Parameters.AddWithValue("@id_producto", Convert.ToInt32(row.Cells("ID").Value))
+            cmd2.Parameters.AddWithValue("@cantidad", Convert.ToInt32(row.Cells("CANTIDAD").Value))
+            cmd2.Parameters.AddWithValue("@subtotal", Convert.ToString(row.Cells("TOTAL").Value))
+            cmd2.ExecuteNonQuery()
+        Next
+
+        Dim query As String = "INSERT INTO VENTA (item, id_producto, cantidad, subtotal) VALUES (@item, @id_producto, @cantidad, @subtotal)"
+        Dim cmd As New SqlCommand(query, conexion)
+
+        For Each row As DataGridViewRow In DataGridView1.Rows
+
+            cmd.Parameters.Clear()
+
+            cmd.Parameters.AddWithValue("@item", Convert.ToString(row.Cells("PRODUCTO").Value))
+            cmd.Parameters.AddWithValue("@id_producto", Convert.ToInt32(row.Cells("ID").Value))
+            cmd.Parameters.AddWithValue("@cantidad", Convert.ToInt32(row.Cells("CANTIDAD").Value))
+            cmd.Parameters.AddWithValue("@subtotal", Convert.ToString(row.Cells("TOTAL").Value))
+            cmd.ExecuteNonQuery()
+        Next
+
+        conexion.Close()
+
+
     End Sub
 
     Private Sub txtcantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcantidad.KeyPress
@@ -195,12 +254,11 @@ Public Class Ventas
         End If
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
-    End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
         MenuPrincipal.Show()
     End Sub
+
 End Class
