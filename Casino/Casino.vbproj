@@ -81,10 +81,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BD_CASINO2DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Login1.Designer.vb">
-      <DependentUpon>Login1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Login1.vb" />
     <Compile Include="MantenedorStock.Designer.vb">
       <DependentUpon>MantenedorStock.vb</DependentUpon>
     </Compile>
@@ -127,9 +123,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Login1.resx">
-      <DependentUpon>Login1.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MantenedorStock.resx">
       <DependentUpon>MantenedorStock.vb</DependentUpon>
     </EmbeddedResource>

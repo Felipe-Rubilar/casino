@@ -4,7 +4,7 @@ Imports System.Data.SqlClient
 Public Class Ventas
 
 
-    Dim conexion As New SqlConnection("Data Source=.;Initial Catalog=BD_CASINO2;Integrated Security=True")
+    Dim conexion As New SqlConnection("Data Source=.\SQLEXPRESS;Initial Catalog=BD_CASINO2;Integrated Security=True")
     Dim cmd As SqlCommand
     Dim da As New SqlDataAdapter
     Dim dtb As New DataTable
