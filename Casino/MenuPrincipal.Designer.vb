@@ -24,31 +24,33 @@ Partial Class MenuPrincipal
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MenuPrincipal))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.InicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.operaciones = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoginCasinoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NosotrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ContactoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mantenedores = New System.Windows.Forms.ToolStripMenuItem()
+        Me.reportes = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.NosotrosToolStripMenuItem, Me.ContactoToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.operaciones, Me.mantenedores, Me.reportes, Me.SalirToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(534, 56)
+        Me.MenuStrip1.Size = New System.Drawing.Size(716, 56)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'InicioToolStripMenuItem
+        'operaciones
         '
-        Me.InicioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoginCasinoToolStripMenuItem})
-        Me.InicioToolStripMenuItem.Image = CType(resources.GetObject("InicioToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.InicioToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.InicioToolStripMenuItem.Name = "InicioToolStripMenuItem"
-        Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(136, 52)
-        Me.InicioToolStripMenuItem.Text = "Operaciones "
+        Me.operaciones.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoginCasinoToolStripMenuItem})
+        Me.operaciones.Image = CType(resources.GetObject("operaciones.Image"), System.Drawing.Image)
+        Me.operaciones.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.operaciones.Name = "operaciones"
+        Me.operaciones.Size = New System.Drawing.Size(136, 52)
+        Me.operaciones.Text = "Operaciones "
         '
         'LoginCasinoToolStripMenuItem
         '
@@ -57,21 +59,21 @@ Partial Class MenuPrincipal
         Me.LoginCasinoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.LoginCasinoToolStripMenuItem.Text = "Realizar Venta"
         '
-        'NosotrosToolStripMenuItem
+        'mantenedores
         '
-        Me.NosotrosToolStripMenuItem.Image = CType(resources.GetObject("NosotrosToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.NosotrosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.NosotrosToolStripMenuItem.Name = "NosotrosToolStripMenuItem"
-        Me.NosotrosToolStripMenuItem.Size = New System.Drawing.Size(143, 52)
-        Me.NosotrosToolStripMenuItem.Text = "Mantenedores"
+        Me.mantenedores.Image = CType(resources.GetObject("mantenedores.Image"), System.Drawing.Image)
+        Me.mantenedores.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.mantenedores.Name = "mantenedores"
+        Me.mantenedores.Size = New System.Drawing.Size(143, 52)
+        Me.mantenedores.Text = "Mantenedores"
         '
-        'ContactoToolStripMenuItem
+        'reportes
         '
-        Me.ContactoToolStripMenuItem.Image = CType(resources.GetObject("ContactoToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.ContactoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ContactoToolStripMenuItem.Name = "ContactoToolStripMenuItem"
-        Me.ContactoToolStripMenuItem.Size = New System.Drawing.Size(113, 52)
-        Me.ContactoToolStripMenuItem.Text = "Reportes"
+        Me.reportes.Image = CType(resources.GetObject("reportes.Image"), System.Drawing.Image)
+        Me.reportes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.reportes.Name = "reportes"
+        Me.reportes.Size = New System.Drawing.Size(113, 52)
+        Me.reportes.Text = "Reportes"
         '
         'SalirToolStripMenuItem
         '
@@ -81,13 +83,34 @@ Partial Class MenuPrincipal
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(92, 52)
         Me.SalirToolStripMenuItem.Text = "Salir "
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(570, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(134, 13)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Tipo de usuario conectado"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox1.Location = New System.Drawing.Point(620, 25)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(34, 13)
+        Me.TextBox1.TabIndex = 3
+        '
         'MenuPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(534, 511)
+        Me.ClientSize = New System.Drawing.Size(716, 511)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.IsMdiContainer = True
@@ -105,9 +128,11 @@ Partial Class MenuPrincipal
     End Sub
 
     Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents InicioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents operaciones As ToolStripMenuItem
     Friend WithEvents LoginCasinoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents NosotrosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ContactoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents mantenedores As ToolStripMenuItem
+    Friend WithEvents reportes As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TextBox1 As TextBox
 End Class

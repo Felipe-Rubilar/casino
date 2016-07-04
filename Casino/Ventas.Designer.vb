@@ -24,6 +24,8 @@ Partial Class Ventas
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventas))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.txtsubtotal = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -36,6 +38,8 @@ Partial Class Ventas
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnagregar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.label8 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.txttotal = New System.Windows.Forms.TextBox()
@@ -54,11 +58,8 @@ Partial Class Ventas
         Me.lblIDventas = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.label8 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,6 +69,8 @@ Partial Class Ventas
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.Label10)
+        Me.Panel1.Controls.Add(Me.TextBox2)
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.TextBox3)
         Me.Panel1.Controls.Add(Me.txtsubtotal)
@@ -92,10 +95,29 @@ Partial Class Ventas
         Me.Panel1.Controls.Add(Me.lblproducto)
         Me.Panel1.Controls.Add(Me.txtIDventas)
         Me.Panel1.Controls.Add(Me.lblIDventas)
-        Me.Panel1.Location = New System.Drawing.Point(0, 213)
+        Me.Panel1.Location = New System.Drawing.Point(0, 180)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1029, 465)
+        Me.Panel1.Size = New System.Drawing.Size(1029, 498)
         Me.Panel1.TabIndex = 0
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(8, 16)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(64, 21)
+        Me.Label9.TabIndex = 24
+        Me.Label9.Text = "Usuario"
+        '
+        'TextBox3
+        '
+        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox3.Location = New System.Drawing.Point(78, 16)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.ReadOnly = True
+        Me.TextBox3.Size = New System.Drawing.Size(48, 20)
+        Me.TextBox3.TabIndex = 23
         '
         'txtsubtotal
         '
@@ -217,6 +239,25 @@ Partial Class Ventas
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(423, 459)
         Me.Panel2.TabIndex = 10
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox1.Location = New System.Drawing.Point(192, 24)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(64, 20)
+        Me.TextBox1.TabIndex = 22
+        '
+        'label8
+        '
+        Me.label8.AutoSize = True
+        Me.label8.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label8.Location = New System.Drawing.Point(17, 13)
+        Me.label8.Name = "label8"
+        Me.label8.Size = New System.Drawing.Size(169, 37)
+        Me.label8.TabIndex = 18
+        Me.label8.Text = "FACTURA Nº"
         '
         'Button1
         '
@@ -379,7 +420,7 @@ Partial Class Ventas
         Me.Label1.BackColor = System.Drawing.Color.Black
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(12, 90)
+        Me.Label1.Location = New System.Drawing.Point(25, 59)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(514, 37)
         Me.Label1.TabIndex = 1
@@ -389,55 +430,30 @@ Partial Class Ventas
         '
         Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(552, 3)
+        Me.PictureBox1.Location = New System.Drawing.Point(597, 3)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(343, 207)
+        Me.PictureBox1.Size = New System.Drawing.Size(298, 171)
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
-        '
-        'label8
-        '
-        Me.label8.AutoSize = True
-        Me.label8.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label8.Location = New System.Drawing.Point(17, 13)
-        Me.label8.Name = "label8"
-        Me.label8.Size = New System.Drawing.Size(169, 37)
-        Me.label8.TabIndex = 18
-        Me.label8.Text = "FACTURA Nº"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Location = New System.Drawing.Point(192, 24)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(64, 20)
-        Me.TextBox1.TabIndex = 22
         '
         'TextBox2
         '
         Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox2.Location = New System.Drawing.Point(12, 12)
+        Me.TextBox2.Location = New System.Drawing.Point(503, 16)
         Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
         Me.TextBox2.Size = New System.Drawing.Size(85, 20)
         Me.TextBox2.TabIndex = 22
         '
-        'TextBox3
+        'Label10
         '
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox3.Location = New System.Drawing.Point(78, 20)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(48, 20)
-        Me.TextBox3.TabIndex = 23
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(8, 16)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(64, 21)
-        Me.Label9.TabIndex = 24
-        Me.Label9.Text = "Usuario"
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(399, 16)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(98, 21)
+        Me.Label10.TabIndex = 25
+        Me.Label10.Text = "Fecha actual"
         '
         'Ventas
         '
@@ -445,7 +461,6 @@ Partial Class Ventas
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(1029, 725)
-        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
@@ -499,4 +514,5 @@ Partial Class Ventas
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Label10 As Label
 End Class
