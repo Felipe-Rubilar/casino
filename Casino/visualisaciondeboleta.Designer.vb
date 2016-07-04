@@ -22,27 +22,30 @@ Partial Class visualisaciondeboleta
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(visualisaciondeboleta))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblpreboleta = New System.Windows.Forms.Label()
         Me.btnconfirmar = New System.Windows.Forms.Button()
         Me.btnvolver = New System.Windows.Forms.Button()
         Me.btnimprimir = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Location = New System.Drawing.Point(12, 69)
+        Me.Panel1.Location = New System.Drawing.Point(12, 104)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(342, 319)
+        Me.Panel1.Size = New System.Drawing.Size(342, 284)
         Me.Panel1.TabIndex = 0
         '
         'lblpreboleta
         '
         Me.lblpreboleta.AutoSize = True
-        Me.lblpreboleta.BackColor = System.Drawing.Color.LightSeaGreen
+        Me.lblpreboleta.BackColor = System.Drawing.Color.Black
         Me.lblpreboleta.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblpreboleta.Location = New System.Drawing.Point(120, 23)
+        Me.lblpreboleta.Location = New System.Drawing.Point(186, 38)
         Me.lblpreboleta.Name = "lblpreboleta"
         Me.lblpreboleta.Size = New System.Drawing.Size(112, 30)
         Me.lblpreboleta.TabIndex = 1
@@ -81,12 +84,23 @@ Partial Class visualisaciondeboleta
         Me.btnimprimir.Text = "Imprimir"
         Me.btnimprimir.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Location = New System.Drawing.Point(66, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(114, 79)
+        Me.PictureBox1.TabIndex = 16
+        Me.PictureBox1.TabStop = False
+        '
         'visualisaciondeboleta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.LightSeaGreen
+        Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(371, 453)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnimprimir)
         Me.Controls.Add(Me.btnvolver)
         Me.Controls.Add(Me.btnconfirmar)
@@ -95,6 +109,7 @@ Partial Class visualisaciondeboleta
         Me.ForeColor = System.Drawing.Color.White
         Me.Name = "visualisaciondeboleta"
         Me.Text = "visualisaciondeboleta"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -105,4 +120,5 @@ Partial Class visualisaciondeboleta
     Friend WithEvents btnconfirmar As Button
     Friend WithEvents btnvolver As Button
     Friend WithEvents btnimprimir As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
